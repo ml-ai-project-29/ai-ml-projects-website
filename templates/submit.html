@@ -1,19 +1,19 @@
 {% extends "base.html" %}
 
-{% block title %}Submit Project - OneStepAway Projects | Get Your Custom Quote{% endblock %}
+{% block title %}Submit Project - Submit! We build it! | Get Your Custom Quote{% endblock %}
 
 {% block content %}
 <section class="submit-hero">
     <div class="container">
-        <h1 class="page-title">Start Your AI/ML Project Journey</h1>
-        <p class="page-subtitle">Submit your project requirements and receive a personalized quote within 24 hours. Our expert team is ready to help you succeed.</p>
+        <h1 class="page-title animate-fade-in">Start Your Project Journey</h1>
+        <p class="page-subtitle animate-slide-up">Submit your project requirements and receive a personalized quote within 24 hours. Our expert team is ready to help you succeed.</p>
     </div>
 </section>
 
 <section class="submit-form">
     <div class="container">
         <div class="form-container">
-            <div class="form-info">
+            <div class="form-info animate-fade-in-left">
                 <h3>Project Requirements Form</h3>
                 <p>Please fill out the form below with your project details. We'll review your requirements and get back to you within 24 hours with a custom quote and timeline.</p>
                 
@@ -41,19 +41,26 @@
                 </div>
             </div>
 
-            <div class="google-form-container">
-                <h4>Submit Your Project Requirements</h4>
+            <div class="google-form-container animate-fade-in-right">
+                <h4 class="vision-heading">Got the vision! We'll handle it - Just submit it!</h4>
                 <p>Please use the form below to submit your project request. Be as detailed as possible to help us provide the most accurate quote.</p>
                 
                 <!-- Google Form Embed -->
-                <iframe src="https://docs.google.com/forms/d/1TuVnumVrTQjWq22aYrlGMc4Tzy_-6Unk31y58cdsK9c/viewform?embedded=true" 
-                        width="100%" 
-                        height="600" 
-                        frameborder="0" 
-                        marginheight="0" 
-                        marginwidth="0">
-                    Loading…
-                </iframe>
+                <div class="form-wrapper">
+                    <iframe src="https://docs.google.com/forms/d/1TuVnumVrTQjWq22aYrlGMc4Tzy_-6Unk31y58cdsK9c/viewform?embedded=true" 
+                            width="100%" 
+                            height="600" 
+                            frameborder="0" 
+                            marginheight="0" 
+                            marginwidth="0">
+                        Loading…
+                    </iframe>
+                </div>
+                
+                <div class="response-message animate-pulse">
+                    <h5>🎉 We will get back soon!</h5>
+                    <p>Thank you for submitting your project. Our team is excited to work on your vision!</p>
+                </div>
             </div>
         </div>
     </div>
@@ -69,4 +76,187 @@
         </div>
     </div>
 </section>
+
+<style>
+/* Animation classes */
+.animate-fade-in {
+    animation: fadeIn 1s ease-in;
+}
+
+.animate-slide-up {
+    animation: slideUp 1s ease-out 0.3s both;
+}
+
+.animate-fade-in-left {
+    animation: fadeInLeft 1s ease-out 0.5s both;
+}
+
+.animate-fade-in-right {
+    animation: fadeInRight 1s ease-out 0.7s both;
+}
+
+.animate-pulse {
+    animation: pulse 2s infinite;
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { 
+        opacity: 0; 
+        transform: translateY(30px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+@keyframes fadeInLeft {
+    from { 
+        opacity: 0; 
+        transform: translateX(-50px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateX(0); 
+    }
+}
+
+@keyframes fadeInRight {
+    from { 
+        opacity: 0; 
+        transform: translateX(50px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateX(0); 
+    }
+}
+
+@keyframes pulse {
+    0%, 100% { 
+        transform: scale(1); 
+        opacity: 1; 
+    }
+    50% { 
+        transform: scale(1.05); 
+        opacity: 0.8; 
+    }
+}
+
+/* Enhanced styling for the vision heading */
+.vision-heading {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
+}
+
+/* Form wrapper styling */
+.form-wrapper {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.form-wrapper:hover {
+    transform: translateY(-5px);
+}
+
+/* Response message styling */
+.response-message {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    margin-top: 2rem;
+    box-shadow: 0 8px 25px rgba(79, 172, 254, 0.3);
+}
+
+.response-message h5 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.response-message p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Enhanced submit hero section */
+.submit-hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.page-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.page-subtitle {
+    font-size: 1.3rem;
+    opacity: 0.9;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Enhanced form container */
+.form-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin: 3rem 0;
+}
+
+.form-info {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.google-form-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .form-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .page-title {
+        font-size: 2rem;
+    }
+    
+    .vision-heading {
+        font-size: 1.4rem;
+    }
+}
+</style>
 {% endblock %} 
