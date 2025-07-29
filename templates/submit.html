@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 
-{% block title %}Submit Project - AI/ML Projects for Students{% endblock %}
+{% block title %}Submit Project - OneStepAway Projects | Get Your Custom Quote{% endblock %}
 
 {% block content %}
 <section class="submit-hero">
     <div class="container">
-        <h1 class="page-title">Submit Your Project Request</h1>
-        <p class="page-subtitle">Tell us about your project requirements and we'll create a custom solution for you</p>
+        <h1 class="page-title">Start Your AI/ML Project Journey</h1>
+        <p class="page-subtitle">Submit your project requirements and receive a personalized quote within 24 hours. Our expert team is ready to help you succeed.</p>
     </div>
 </section>
 
@@ -14,25 +14,36 @@
     <div class="container">
         <div class="form-container">
             <div class="form-info">
-                <h3>Project Submission Form</h3>
-                <p>Please fill out the form below with your project details. We'll review your requirements and get back to you within 24 hours with a custom quote and timeline.</p>
+                <h3>Project Requirements Form</h3>
+                <p>Complete the form below with your project details. Our team will carefully review your requirements and send you a detailed proposal with timeline, pricing, and deliverables within 24 hours.</p>
                 
                 <div class="form-requirements">
-                    <h4>What we need from you:</h4>
+                    <h4>Information We Need:</h4>
                     <ul>
-                        <li>Project type (ML, NLP, Recommendation System, etc.)</li>
-                        <li>Project description and objectives</li>
-                        <li>Preferred programming language</li>
-                        <li>Deadline requirements</li>
-                        <li>Any specific datasets or requirements</li>
-                        <li>Your contact information</li>
+                        <li><strong>Project Type:</strong> ML, NLP, Recommendation System, Web Application, etc.</li>
+                        <li><strong>Project Description:</strong> Detailed objectives and goals</li>
+                        <li><strong>Technical Requirements:</strong> Preferred programming language, frameworks, datasets</li>
+                        <li><strong>Timeline:</strong> Your deadline and urgency level</li>
+                        <li><strong>Academic Context:</strong> Course requirements, submission guidelines</li>
+                        <li><strong>Contact Details:</strong> Email and preferred communication method</li>
                     </ul>
+                </div>
+
+                <div class="process-reminder">
+                    <h4>What Happens Next?</h4>
+                    <ol>
+                        <li><strong>Review & Quote:</strong> We analyze your requirements and send a detailed proposal</li>
+                        <li><strong>Approval:</strong> You review the quote and approve the project scope</li>
+                        <li><strong>Payment:</strong> Secure payment processing to start development</li>
+                        <li><strong>Development:</strong> Our team builds your custom project</li>
+                        <li><strong>Delivery:</strong> Complete project with documentation and support</li>
+                    </ol>
                 </div>
             </div>
 
             <div class="google-form-container">
-                <h4>Google Form</h4>
-                <p>Please use the form below to submit your project request:</p>
+                <h4>Submit Your Project Requirements</h4>
+                <p>Fill out the form below to get started. Be as detailed as possible to help us provide the most accurate quote.</p>
                 
                 <!-- Google Form Embed -->
                 <iframe src="https://docs.google.com/forms/d/1TpKjyYI_SlmRvyD4S1DmEkhfj0FCutUSOjbHb3sgOqk/viewform?embedded=true" 
@@ -50,11 +61,11 @@
 
 <section class="contact-alternative">
     <div class="container">
-        <h3>Prefer to contact us directly?</h3>
-        <p>You can also reach out to us via email or messaging apps for a faster response.</p>
+        <h3>Need Immediate Assistance?</h3>
+        <p>For urgent inquiries or if you prefer direct communication, reach out to us through email or our contact page. We typically respond within 2-4 hours during business hours.</p>
         <div class="contact-options">
-            <a href="mailto:29pranjalgupta@gmail.com" class="btn btn-secondary">Email Us</a>
-            <a href="{{ url_for('contact') }}" class="btn btn-primary">Contact Page</a>
+            <a href="mailto:29pranjalgupta@gmail.com" class="btn btn-secondary">Send Email</a>
+            <a href="{{ url_for('contact') }}" class="btn btn-primary">Contact Us</a>
         </div>
     </div>
 </section>
