@@ -1,17 +1,12 @@
 {% extends "base.html" %}
 
-{% block title %}Submit Project - AI/ML Projects for Students{% endblock %}
+{% block title %}Submit Project - OneStepAway Projects | Get Your Custom Quote{% endblock %}
 
 {% block content %}
 <section class="submit-hero">
     <div class="container">
-<<<<<<< HEAD
-        <h1 class="page-title">Start Your Onestepaway Project Journey</h1>
+        <h1 class="page-title">Start Your AI/ML Project Journey</h1>
         <p class="page-subtitle">Submit your project requirements and receive a personalized quote within 24 hours. Our expert team is ready to help you succeed.</p>
-=======
-        <h1 class="page-title">Submit Your Project Request</h1>
-        <p class="page-subtitle">Tell us about your project requirements and we'll create a custom solution for you</p>
->>>>>>> parent of ac04d27 (updated)
     </div>
 </section>
 
@@ -19,11 +14,11 @@
     <div class="container">
         <div class="form-container">
             <div class="form-info">
-                <h3>Project Submission Form</h3>
+                <h3>Project Requirements Form</h3>
                 <p>Please fill out the form below with your project details. We'll review your requirements and get back to you within 24 hours with a custom quote and timeline.</p>
                 
                 <div class="form-requirements">
-                    <h4>What we need from you:</h4>
+                    <h4>Information We Need:</h4>
                     <ul>
                         <li>Project type (ML, NLP, Recommendation System, etc.)</li>
                         <li>Project description and objectives</li>
@@ -33,11 +28,22 @@
                         <li>Your contact information</li>
                     </ul>
                 </div>
+
+                <div class="process-reminder">
+                    <h4>What Happens Next?</h4>
+                    <ol>
+                        <li>We review your requirements (24 hours)</li>
+                        <li>Send you a detailed quote and timeline</li>
+                        <li>Once approved, you make payment</li>
+                        <li>We deliver your complete project</li>
+                        <li>Optional: Explanation session included</li>
+                    </ol>
+                </div>
             </div>
 
             <div class="google-form-container">
-                <h4>Google Form</h4>
-                <p>Please use the form below to submit your project request:</p>
+                <h4>Submit Your Project Requirements</h4>
+                <p>Please use the form below to submit your project request. Be as detailed as possible to help us provide the most accurate quote.</p>
                 
                 <!-- Google Form Embed -->
                 <iframe src="https://docs.google.com/forms/d/1TuVnumVrTQjWq22aYrlGMc4Tzy_-6Unk31y58cdsK9c/viewform?embedded=true" 
@@ -56,7 +62,7 @@
 <section class="contact-alternative">
     <div class="container">
         <h3>Prefer to contact us directly?</h3>
-        <p>You can also reach out to us via email or messaging apps for a faster response.</p>
+        <p>You can also reach out to us via email for a faster response and personalized consultation.</p>
         <div class="contact-options">
             <a href="mailto:onestepawayprojects@gmail.com" class="btn btn-secondary">Send Email</a>
             <a href="{{ url_for('contact') }}" class="btn btn-primary">Contact Us</a>
