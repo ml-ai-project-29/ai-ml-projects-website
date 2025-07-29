@@ -1,11 +1,11 @@
-# AI/ML Projects for Students - Flask Website
+# Onestepaway Projects for Students - Flask Website
 
-A modern Flask website for an AI/ML startup that helps college students get beginner-level AI/ML projects for submissions and internships.
+A modern Flask website for an Onestepaway startup that helps college students get beginner-level Onestepaway projects for submissions and internships.
 
 ## Features
 
 - **Home Page**: Welcome message and service overview
-- **Services Page**: Detailed list of AI/ML services offered
+- **Services Page**: Detailed list of Onestepaway services offered
 - **Submit Project Page**: Google Form integration for project submissions
 - **Contact Page**: Multiple contact methods and FAQ section
 - **Responsive Design**: Mobile-friendly interface
