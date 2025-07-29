@@ -167,7 +167,7 @@ gunicorn app:app
 ## Support
 
 For any issues or questions, please contact:
-- Email: 29pranjalgupta@gmail.com
+- Email: onestepawayprojects@gmail.com
 - Update the contact page with your actual Telegram/WhatsApp details
 
 ## License
