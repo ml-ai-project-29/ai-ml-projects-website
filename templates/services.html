@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+{% block title %}Services - AI/ML Projects for Students{% endblock %}
+
+{% block content %}
+<section class="services-hero">
+    <div class="container">
+        <h1 class="page-title">Our Services</h1>
+        <p class="page-subtitle">Comprehensive AI/ML solutions for college students</p>
+    </div>
+</section>
+
+<section class="services-list">
+    <div class="container">
+        <div class="service-item">
+            <div class="service-icon">🤖</div>
+            <div class="service-content">
+                <h3>Machine Learning Projects</h3>
+                <p>Custom ML projects including classification, regression, clustering, and more. Perfect for beginners with step-by-step explanations and implementation.</p>
+                <ul class="service-features">
+                    <li>Linear/Logistic Regression</li>
+                    <li>Decision Trees & Random Forest</li>
+                    <li>Support Vector Machines</li>
+                    <li>K-Means Clustering</li>
+                    <li>Neural Networks</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="service-item">
+            <div class="service-icon">📝</div>
+            <div class="service-content">
+                <h3>Natural Language Processing (NLP)</h3>
+                <p>Text analysis and language processing projects using modern NLP techniques and libraries.</p>
+                <ul class="service-features">
+                    <li>Sentiment Analysis</li>
+                    <li>Text Classification</li>
+                    <li>Named Entity Recognition</li>
+                    <li>Text Summarization</li>
+                    <li>Chatbot Development</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="service-item">
+            <div class="service-icon">🎯</div>
+            <div class="service-content">
+                <h3>Recommendation Systems</h3>
+                <p>Build intelligent recommendation engines for various applications and domains.</p>
+                <ul class="service-features">
+                    <li>Collaborative Filtering</li>
+                    <li>Content-Based Filtering</li>
+                    <li>Hybrid Systems</li>
+                    <li>Movie/Product Recommendations</li>
+                    <li>Music/Book Recommendations</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="service-item">
+            <div class="service-icon">🌐</div>
+            <div class="service-content">
+                <h3>Python + HTML Projects</h3>
+                <p>Full-stack web applications combining Python backend with modern HTML/CSS/JavaScript frontend.</p>
+                <ul class="service-features">
+                    <li>Flask/Django Web Apps</li>
+                    <li>Interactive Dashboards</li>
+                    <li>Data Visualization</li>
+                    <li>API Development</li>
+                    <li>Responsive Design</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="service-item">
+            <div class="service-icon">📋</div>
+            <div class="service-content">
+                <h3>Project Report + Code Delivery</h3>
+                <p>Complete project package including comprehensive documentation and well-commented code.</p>
+                <ul class="service-features">
+                    <li>Detailed Project Report</li>
+                    <li>Source Code with Comments</li>
+                    <li>Installation Instructions</li>
+                    <li>Dataset Documentation</li>
+                    <li>Presentation Slides</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <div class="container">
+        <h2>Ready to Get Started?</h2>
+        <p>Submit your project requirements and we'll get back to you with a custom solution.</p>
+        <a href="{{ url_for('submit') }}" class="btn btn-primary">Submit Project Request</a>
+    </div>
+</section>
+{% endblock %} 
