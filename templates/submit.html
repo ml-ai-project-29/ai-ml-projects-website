@@ -3,6 +3,14 @@
 {% block title %}Submit Project - Submit! We build it! | Get Your Custom Quote{% endblock %}
 
 {% block content %}
+<!-- Floating visual elements -->
+<div class="floating-shapes">
+    <div class="floating-shape"></div>
+    <div class="floating-shape"></div>
+    <div class="floating-shape"></div>
+    <div class="floating-shape"></div>
+</div>
+
 <section class="submit-hero">
     <div class="container">
         <h1 class="page-title animate-fade-in">Start Your Project Journey</h1>
@@ -47,14 +55,18 @@
                 
                 <!-- Google Form Embed -->
                 <div class="form-wrapper">
-                    <iframe src="https://docs.google.com/forms/d/1TuVnumVrTQjWq22aYrlGMc4Tzy_-6Unk31y58cdsK9c/viewform?embedded=true" 
-                            width="100%" 
-                            height="600" 
-                            frameborder="0" 
-                            marginheight="0" 
-                            marginwidth="0">
-                        Loading…
-                    </iframe>
+                    <div class="iframe-container">
+                        <iframe src="https://docs.google.com/forms/d/1TuVnumVrTQjWq22aYrlGMc4Tzy_-6Unk31y58cdsK9c/viewform?embedded=true&usp=pp_url&hl=en&chromeless=1" 
+                                width="100%" 
+                                height="600" 
+                                frameborder="0" 
+                                marginheight="0" 
+                                marginwidth="0"
+                                style="border: none; overflow: hidden;">
+                            Loading…
+                        </iframe>
+                    </div>
+                    <div class="form-overlay"></div>
                 </div>
                 
                 <div class="response-message animate-pulse">
@@ -151,41 +163,104 @@
 
 /* Enhanced styling for the vision heading */
 .vision-heading {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #667eea 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    font-size: 1.8rem;
-    font-weight: bold;
+    font-size: 2rem;
+    font-weight: 800;
     text-align: center;
-    margin-bottom: 1.5rem;
-    padding: 1rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.5px;
+}
+
+.vision-heading::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.vision-heading:hover::before {
+    left: 100%;
 }
 
 /* Form wrapper styling */
 .form-wrapper {
-    border-radius: 15px;
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
     margin-bottom: 2rem;
-    transition: transform 0.3s ease;
+    transition: all 0.4s ease;
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9ff 100%);
+    border: 1px solid rgba(102, 126, 234, 0.1);
+    position: relative;
+    height: 600px;
+}
+
+.form-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 50%, #667eea 100%);
+    z-index: 3;
 }
 
 .form-wrapper:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(102, 126, 234, 0.15);
+}
+
+.iframe-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.form-wrapper iframe {
+    border-radius: 20px;
+    background: transparent;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+}
+
+.form-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(180deg, transparent 0%, #ffffff 100%);
+    z-index: 4;
+    pointer-events: none;
 }
 
 /* Response message styling */
 .response-message {
-    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     padding: 2rem;
     border-radius: 15px;
     text-align: center;
     margin-top: 2rem;
-    box-shadow: 0 8px 25px rgba(79, 172, 254, 0.3);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 .response-message h5 {
@@ -205,6 +280,37 @@
     color: white;
     padding: 4rem 0;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.submit-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.1)"/><circle cx="10" cy="60" r="0.5" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="40" r="0.5" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    animation: float 20s ease-in-out infinite;
+    z-index: 1;
+}
+
+.submit-hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(255,255,255,0.1) 0%, transparent 50%);
+    z-index: 2;
+}
+
+.submit-hero .container {
+    position: relative;
+    z-index: 3;
 }
 
 .page-title {
@@ -225,8 +331,21 @@
 .form-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    margin: 3rem 0;
+    gap: 4rem;
+    margin: 4rem 0;
+    position: relative;
+}
+
+.form-container::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 2px;
+    height: 80%;
+    background: linear-gradient(180deg, transparent, rgba(102, 126, 234, 0.2), transparent);
+    z-index: 0;
 }
 
 .form-info {
@@ -237,10 +356,284 @@
 }
 
 .google-form-container {
-    background: white;
-    padding: 2rem;
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9ff 100%);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(102, 126, 234, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.google-form-container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(102, 126, 234, 0.03) 0%, transparent 70%);
+    z-index: 0;
+}
+
+.google-form-container > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Hide Google Forms footer elements */
+.form-wrapper iframe {
+    border: none;
+}
+
+/* Hide Google Forms footer text and elements */
+.form-wrapper iframe + div,
+.form-wrapper iframe ~ div {
+    display: none !important;
+}
+
+/* Additional CSS to hide Google Forms footer */
+iframe[src*="docs.google.com"] {
+    border: none !important;
+}
+
+/* Hide any Google Forms related footer content */
+iframe[src*="docs.google.com"] + *,
+iframe[src*="docs.google.com"] ~ * {
+    display: none !important;
+}
+
+/* More aggressive hiding of Google Forms elements */
+iframe[src*="docs.google.com"] {
+    border: none !important;
+    overflow: hidden !important;
+}
+
+/* Hide Google Forms branding and footer */
+iframe[src*="docs.google.com"] + div,
+iframe[src*="docs.google.com"] ~ div,
+iframe[src*="docs.google.com"] + span,
+iframe[src*="docs.google.com"] ~ span,
+iframe[src*="docs.google.com"] + p,
+iframe[src*="docs.google.com"] ~ p {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+}
+
+/* Hide reCAPTCHA and other Google elements */
+iframe[src*="docs.google.com"] + *,
+iframe[src*="docs.google.com"] ~ * {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    left: -9999px !important;
+    top: -9999px !important;
+}
+
+
+
+/* Floating visual elements */
+.floating-shapes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.floating-shape {
+    position: absolute;
+    opacity: 0.1;
+    animation: float 6s ease-in-out infinite;
+}
+
+.floating-shape:nth-child(1) {
+    top: 10%;
+    left: 10%;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    border-radius: 50%;
+    animation-delay: 0s;
+}
+
+.floating-shape:nth-child(2) {
+    top: 20%;
+    right: 15%;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(45deg, #764ba2, #667eea);
+    border-radius: 20px;
+    animation-delay: 2s;
+}
+
+.floating-shape:nth-child(3) {
+    bottom: 30%;
+    left: 5%;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    border-radius: 50%;
+    animation-delay: 4s;
+}
+
+.floating-shape:nth-child(4) {
+    bottom: 20%;
+    right: 10%;
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(45deg, #764ba2, #667eea);
     border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    animation-delay: 1s;
+}
+
+/* Enhanced animations */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    33% {
+        transform: translateY(-20px) rotate(120deg);
+    }
+    66% {
+        transform: translateY(-10px) rotate(240deg);
+    }
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(102, 126, 234, 0.6);
+    }
+}
+
+@keyframes slide-in-left {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-in-right {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Enhanced form info styling */
+.form-info {
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9ff 100%);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(102, 126, 234, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.form-info::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+}
+
+.form-info h3 {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.form-requirements, .process-reminder {
+    background: rgba(102, 126, 234, 0.05);
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin: 1.5rem 0;
+    border-left: 4px solid #667eea;
+}
+
+.form-requirements h4, .process-reminder h4 {
+    color: #667eea;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.form-requirements ul, .process-reminder ol {
+    padding-left: 1.5rem;
+}
+
+.form-requirements li, .process-reminder li {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+/* Enhanced response message */
+.response-message {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    text-align: center;
+    margin-top: 2rem;
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.response-message::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: float 15s ease-in-out infinite;
+}
+
+.response-message h5 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+}
+
+.response-message p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    position: relative;
+    z-index: 1;
 }
 
 /* Responsive design */
@@ -258,5 +651,53 @@
         font-size: 1.4rem;
     }
 }
+</style>
+
+<script>
+/* JavaScript to hide Google Forms elements */
+document.addEventListener('DOMContentLoaded', function() {
+    // Function to hide Google Forms elements
+    function hideGoogleElements() {
+        // Only target elements within the form wrapper
+        const formWrapper = document.querySelector('.form-wrapper');
+        if (!formWrapper) return;
+        
+        const elements = formWrapper.querySelectorAll('*');
+        elements.forEach(element => {
+            const text = element.textContent || element.innerText;
+            if (text && (
+                text.includes('Google Forms') ||
+                text.includes('reCAPTCHA') ||
+                text.includes('Privacy') ||
+                text.includes('Terms') ||
+                text.includes('This content is neither created nor endorsed by Google')
+            )) {
+                // Only hide if it's not our custom elements
+                if (!element.classList.contains('iframe-container') && 
+                    !element.classList.contains('form-overlay') &&
+                    element.tagName !== 'IFRAME') {
+                    element.style.display = 'none';
+                    element.style.visibility = 'hidden';
+                    element.style.opacity = '0';
+                }
+            }
+        });
+    }
+
+    // Run after a delay to catch dynamically loaded elements
+    setTimeout(hideGoogleElements, 2000);
+    setTimeout(hideGoogleElements, 4000);
+    
+    // Observe for changes in the DOM within the form wrapper only
+    const formWrapper = document.querySelector('.form-wrapper');
+    if (formWrapper) {
+        const observer = new MutationObserver(hideGoogleElements);
+        observer.observe(formWrapper, {
+            childList: true,
+            subtree: true
+        });
+    }
+});
+</script>
 </style>
 {% endblock %} 

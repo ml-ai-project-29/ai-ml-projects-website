@@ -747,13 +747,13 @@ body {
 }
 
 .note {
-    color: #9ca3af;
+    color: #ffffff;
     font-size: 0.875rem;
 }
 
 .response-time {
     font-weight: 600;
-    color: #d97706;
+    color: #ffffff;
 }
 
 .contact-form-section {
@@ -969,7 +969,7 @@ body {
 .step-number {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    background: linear-gradient(135deg, #011444, #764ba2);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -978,7 +978,7 @@ body {
     font-weight: bold;
     color: white;
     margin: 0 auto 20px;
-    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
 }
 
 .process-step h3 {
